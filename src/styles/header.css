@@ -44,7 +44,7 @@ header .contenedor-header form{
 header .contenedor-header input[type="search"]{
     width: 40px;
     background-color: white;
-    background-image: url('/images/home/header/search-icon.png');
+    background-image: url('/src/assets/home/header/search-icon.png');
     background-position: center;
     background-repeat: no-repeat;
 	background-size: 20px;

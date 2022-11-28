@@ -1,12 +1,12 @@
-*{
+/* .home{
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-}
+} */
 body{
     max-width: 1440px;
     margin: 0 auto;
-    background-image: url(/images/home/FondoPaginaFinal.jpg);
+    background-image: url('/src/assets/home/FondoPaginaFinal.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
