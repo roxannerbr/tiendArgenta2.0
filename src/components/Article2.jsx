@@ -1,6 +1,7 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-function article({id,imgPrincipal,titulo}) {
+function Article2({id,imgPrincipal,titulo}) {
   return (
     <div>
       <article className="card card1">
@@ -15,4 +16,15 @@ function article({id,imgPrincipal,titulo}) {
   )
 }
 
-export default article
+Article2.propTypes = {
+  id: PropTypes.number,
+  imgPrincipal: PropTypes.string,
+  titulo: PropTypes.string
+}
+Article2.defaultProps={
+  id: '0',
+  imgPrincipal: 'default-image.png',
+  titulo: 'Lorem, ipsum dolor.'
+}
+
+export default Article2

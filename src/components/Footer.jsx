@@ -2,7 +2,8 @@ import React from 'react'
 
 function Footer() {
   return (
-    <><footer>
+    <div>
+        <footer>
           <div className="hilera primer">
               <div className="columnas links">
                   <ul>
@@ -35,16 +36,16 @@ function Footer() {
                   <br />
                   <h6>¡SEGUINOS EN NUESTRAS REDES!</h6>
                   <div className="redes">
-                      <a href="https://www.facebook.com/" target="_blank"><i className="fab fa-facebook-square">fc</i></a>
-                      <a href="https://www.instagram.com/" target="_blank"><i className="fab fa-instagram-square">ing</i></a>
-                      <a href="https://www.twitter.com/" target="_blank"><i className="fab fa-twitter-square">tw</i></a>
-                      <a href="https://www.whatsapp.com/" target="_blank"><i className="fab fa-whatsapp-square">wsp</i></a>
+                      <a href="https://www.facebook.com/" target="_blank"><i className="fab fa-facebook-square"></i></a>
+                      <a href="https://www.instagram.com/" target="_blank"><i className="fab fa-instagram-square"></i></a>
+                      <a href="https://www.twitter.com/" target="_blank"><i className="fab fa-twitter-square"></i></a>
+                      <a href="https://www.whatsapp.com/" target="_blank"><i className="fab fa-whatsapp-square"></i></a>
                   </div>
               </div>
           </div>
           <small> &#169; Copyright 2022 &#8212; TiendArgenta.com.ar &#8212;</small>
       </footer>
-      </>
+    </div>
   )
 }
 

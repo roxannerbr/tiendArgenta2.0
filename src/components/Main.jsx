@@ -1,12 +1,13 @@
 import React from 'react'
 import Article from'./Article'
+import Article2 from'./Article2'
 
 function main() {
 
   let productos=[
     {
       id:1,
-      imgPrincipal:'H-Messi.png',
+      imgPrincipal:'/assets/productos/H-Messi.png',
       titulo:'INDUMENTARIA'
     },
     {
@@ -16,16 +17,18 @@ function main() {
     },
     {
       id:3,
-      imgPrincipal:'Inf-manta.png',
+      imgPrincipal:'/assets/productos/Inf-manta.png',
       titulo:'NOVEDADES'
     },
     {
       id:4,
-      imgPrincipal:'Col-Messi.png',
+      imgPrincipal:'/assets/productos/Col-Messi.png',
       titulo:'COLECCIONABLES'
     },
   ]
   return (
+    <div>
+      <body class="home">
     <main>
     <h1 className="productsPage">PROXIMO PARTIDO EN</h1>
     <section>
@@ -39,7 +42,7 @@ function main() {
                 titulo: producto.titulo,
                 descuento: producto.descuento,
                 precio: producto.precio */}
-            </section>
+      </section>
    
     <div className="contenedor-all">
       <input type="radio" name="imagen-slide" id="1" hidden/>
@@ -63,12 +66,34 @@ function main() {
   </div>
     
     <h1>CONOCÉ TODOS NUESTROS PRODUCTOS</h1>
-    <section className="cards">
-     {productos.map(productos=> 
-        <Article />
-     )}     
+    <section className="cards">   
+
+    {productos.map((producto,index)=>
+      <><Article
+        producto={producto}
+        key={index}
+        id={producto.id}
+        imgPrincipal={producto.imgPrincipal}
+        titulo={producto.titulo}
+         /> 
+         {/* <Article2
+        producto={producto}
+        key={index}
+        id={producto.id}
+        imgPrincipal={producto.imgPrincipal}
+        titulo={producto.titulo}
+         />  */}
+         </>
+    )}  
+  
     </section>
   </main>
+
+
+  <script src="/javascript/simplyCountdown.min.js"></script>
+    <script src="/javascript/countdown.js"></script>
+  </body>
+  </div>
   )
 }
 
