@@ -2,6 +2,11 @@ import React from 'react'
 import logo from '../assets/home/header/logofinalizado.png'
 
 function Header() {
+
+  const menuHamburguesa=()=>{
+    console.log('Hiciste click en el menú');
+    document.querySelector("#burger").classList.toggle('desaparacer');
+  }
   return (
     <div>
       <header>
@@ -26,8 +31,8 @@ function Header() {
           </a>
         </div>
         <div className="burger">
-          <input type="checkbox" name="burger" id="burger" />
-          <label htmlFor="burger"><i className="fas fa-bars"></i></label>
+          <input type="checkbox" name="burger" id="burger" onClick={menuHamburguesa}/>
+          <label htmlFor="burger" ><i className="fas fa-bars"></i></label>
       
         <nav className="nav-desktop">
           <ul>

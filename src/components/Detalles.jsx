@@ -22,7 +22,7 @@ function Detalles() {
             </p>
           </div>
           </div>
-          <div className="talles">
+          {/* <div className="talles">
             <h4>Talles</h4>
             <label htmlFor="select">
               <select name="talles" id="talles">
@@ -35,7 +35,7 @@ function Detalles() {
               </select>
             </label>
             <h4>Stock:</h4>
-          </div>
+          </div> */}
           <div className="agregarCarrito">
             <h4>Cantidad</h4>
               <button className="button button--addOnLeft">-</button>
@@ -52,19 +52,19 @@ function Detalles() {
             <div className="contPrice">
               <h4>Precio</h4>
               <div className="precioViejo">
-                <small></small>
+                <small>$3000</small>
                 <h4></h4>
               </div>
             </div>
             <div className="contPrice">
               <h4>Descuento</h4>
-              <h5></h5>
+              <h5>15%</h5>
             </div>
           </div>
           <div className="linea"></div>
           <div className="totalFinal">
             <h4>Total</h4>
-            <h4></h4>
+            <h4>$2955</h4>
           </div>
           <div className="btnComprar">
             <button type="submit"><a href="/productos/carrito">AÑADIR AL CARRITO</a></button>

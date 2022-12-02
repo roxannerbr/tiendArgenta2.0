@@ -45,6 +45,9 @@ function Footer() {
           </div>
           <small> &#169; Copyright 2022 &#8212; TiendArgenta.com.ar &#8212;</small>
       </footer>
+
+      <script src="/javascript/glider.js"></script>
+      <script src="/javascript/productos.js"></script>
     </div>
   )
 }
