@@ -1,0 +1,11 @@
+main section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main section img{
+    
+}
+input{
+    display: none;
+}

@@ -1,6 +1,22 @@
-import React from 'react'
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+
+//import Productos from "./components/Productos";
+//import Novedades from "./components/Novedades";
+//import Contacto from "./components/Contacto";
+//import Noticias from "./components/Noticias";
+//import PregFrecuentes from "./components/PregFrecuentes";
 
 function Footer() {
+
+    /* redireccion productos */
+    const handleClick = (e) => {
+        e.preventDefault()
+        console.log('hiciste click');
+    }
+
+
+
   return (
     <div>
         <footer>
@@ -8,15 +24,15 @@ function Footer() {
               <div className="columnas links">
                   <ul>
                       <li><i className="fas fa-home"><a href="/">INICIO</a></i></li>
-                      <li><i className="fas fa-trophy"><a href="#">PRODUCTOS</a></i></li>
-                      <li><i className="fas fa-rss"><a href="/novedades">NOVEDADES</a></i></li>
-                      <li><i className="fas fa-envelope"><a href="/contacto">CONTACTO</a></i></li>
+                      <li><i className="fas fa-trophy"><NavLink to={"/productos"}/*  onClick={handleClick} */>PRODUCTOS</NavLink></i></li>
+                      <li><i className="fas fa-rss"><a href="/Novedades">NOVEDADES</a></i></li>
+                      <li><i className="fas fa-envelope"><a href="/Contacto">CONTACTO</a></i></li>
                       <li><i className="fas fa-newspaper"><a href="https://www.ole.com.ar/seleccion/" target="_blank">NOTICIAS</a></i></li>
-                      <li><i className="fas fa-question-circle"><a href="/pregFrecuentes">PREGUNTAS FRECUENTES</a></i></li>
+                      <li><i className="fas fa-question-circle"><a href="/PregFrecuentes">PREGUNTAS FRECUENTES</a></i></li>
                   </ul>
               </div>
               <div className="columnas about">
-                  {/* <iframe
+                   {/* <iframe
                       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13136.557944164106!2d-58.395053169068795!3d-34.60063418736252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccac708c492db%3A0xd382ce07c0e451c0!2sAsociaci%C3%B3n%20del%20F%C3%BAtbol%20Argentino!5e0!3m2!1ses-419!2sar!4v1657577299170!5m2!1ses-419!2sar"
                       width="100%"
                       height="200"
@@ -24,7 +40,7 @@ function Footer() {
                       allowfullscreen=""
                       loading="lazy"
                       referrerpolicy="no-referrer-when-downgrade"
-                  >Viamonte 1366</iframe> */}
+                  >Viamonte 1366</iframe>  */}
               </div>
               <div className="columnas links">
                   <h6>LOCALES</h6>

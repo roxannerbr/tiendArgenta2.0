@@ -1,8 +1,7 @@
 import React from 'react'
 import Article from'./Article'
-import Article2 from'./Article2'
 import Countdown1 from'./Countdown1'
-
+//import Novedades from'./Novedades'
 
 function main() {
 
@@ -34,20 +33,32 @@ function main() {
       <main>
       
        <h1 className="productsPage">PROXIMO PARTIDO EN</h1>
-         <section>
-          {/*  <div className="cuenta">   */}    
-           <Countdown1></Countdown1>
-           {/* </div> */}
+         <section>             
+           <Countdown1></Countdown1>           
          </section>
     
        <h1 className="productsPage">NUEVOS INGRESOS</h1>
          <section className="cardProduct">
-                   {/* id: producto.id,
-                   imagen: producto.imagenes[0].nombre,
-                   titulo: producto.titulo,
-                   descuento: producto.descuento,
-                   precio: producto.precio */}
-         </section>
+         {/*  productos.forEach(producto => 
+              { include('./partials/cards',{
+                  id: producto.id,
+                  imagen: producto.imagenes[0].nombre,
+                  titulo: producto.titulo,
+                  descuento: producto.descuento,
+                  precio: producto.precio
+              }) }
+           */}
+        </section>
+         {/* {productos.map((producto,index)=>
+      <Novedades
+         producto={producto}
+        key={index}
+        id={producto.id}
+        imgPrincipal={producto.imgPrincipal}
+        titulo={producto.titulo} 
+         /> 
+      )}   */}                
+         
    
       <div className="contenedor-all">
          <input type="radio" name="imagen-slide" id="1" hidden/>
@@ -74,21 +85,13 @@ function main() {
     <section className="cards">   
 
     {productos.map((producto,index)=>
-      <><Article
+      <Article
         producto={producto}
         key={index}
         id={producto.id}
         imgPrincipal={producto.imgPrincipal}
         titulo={producto.titulo}
-         /> 
-         {/* <Article2
-        producto={producto}
-        key={index}
-        id={producto.id}
-        imgPrincipal={producto.imgPrincipal}
-        titulo={producto.titulo}
-         />  */}
-         </>
+         />     
     )}  
   
     </section>
