@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Cards from '../partials/Cards'
 
 function Cotillon(props) {
 
@@ -9,10 +10,12 @@ function Cotillon(props) {
     <div>
  
     <article className='cotillon'>
-        <div className='profile-picture' style={{backgroundImage : imagenes}} >
+      <Cards>
+      <div className='profile-picture' style={{backgroundImage : imagenes}} >
             {/* <img src={`/assets/productos/${props.imagen}`} alt={props.alt} /> */}
         </div>
         <h2>{props.nombre}</h2>
+      </Cards>
     </article>
 
     </div>

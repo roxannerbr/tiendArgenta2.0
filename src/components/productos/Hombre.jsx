@@ -1,5 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Cards from '../partials/Cards'
+
 
 function Hombre(props) {
 
@@ -7,7 +9,7 @@ function Hombre(props) {
 
   return (
     <div>
- 
+ <Cards></Cards>
     <article className='hombre'>
         <div className='profile-picture' style={{backgroundImage : imagenes}} >
             {/* <img src={`/assets/productos/${props.imagen}`} alt={props.alt} /> */}

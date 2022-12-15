@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Cards from '../partials/Cards'
 
 function Coleccionables(props) {
 
@@ -9,13 +10,16 @@ function Coleccionables(props) {
     <div>
  
     <article className='coleccionables'>
-        <div className='profile-picture' style={{backgroundImage : imagenes}} >
+      <Cards>
+      <div className='profile-picture' style={{backgroundImage : imagenes}} >
             {/* <img src={`/assets/productos/${props.imagen}`} alt={props.alt} /> */}
         </div>
         <div>
         <h2>{props.nombre}</h2>
         <p>{props.descripcion}</p>
         </div>
+      </Cards>
+        
     </article>
 
     </div>

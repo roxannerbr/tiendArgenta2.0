@@ -1,11 +1,19 @@
 import React/* ,{useState} */ from "react";
 import {Route, BrowserRouter, Routes } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
+/* admin */
+import Admin from "./components/admin/Admin";
+//import AdminTable from "./components/admin/AdminTable";
+
+/* partials */
 import Header from "./components/partials/Header";
 import Main from "./components/home/Main";
+import Cards from "./components/partials/Cards";
 import Footer from "./components/partials/Footer";
 import Contacto from "./components/Contacto";
 
+/* productos */
 import Productos2 from "./components/productos/Productos2";
 import Cotillon from "./components/productos/Cotillon";
 import Coleccionables from "./components/productos/Coleccionables";
@@ -13,35 +21,46 @@ import Indumentaria from "./components/productos/Indumentaria";
 import Hombre from "./components/productos/Hombre";
 import Mujer from "./components/productos/Mujer";
 import Niños from "./components/productos/Niños";
+import Novedades from "./components/home/Novedades";
+import Formulario from "./components/admin/Formulario";
+//import Detalles from "./components/Detalles";
 
+/* user */
 //import Busqueda from "./components/Busqueda";
 import Register from "./components/Register";
 import Login from "./components/Login";
 import Usuario from "./components/Usuario";
 import EditarUsuario from "./components/EditarUsuario";
+
+/* extras */
 import Error from "./components/Error";
 import Carrito from "./components/Carrito";
 import PregFrecuentes from "./components/PregFrecuentes";
-//import Detalles from "./components/Detalles";
 
+/* styles */
 import "./styles/styles.css"
-import Novedades from "./components/home/Novedades";
+
 
 function App() {
-
   //const [main, ] = useState(true)
   //const [indumentaria,setIndumentaria] = useState([])
   //const [Hombre,setHombre] = useState([])
 
   return (
-    <div className="home">
+    <div >
       <BrowserRouter>
 
       <Header></Header>
+      {/* <Cards></Cards> */}
       
       <Routes>
         {/* home */}
         <Route path='/' element={<Main/>}/>
+
+        {/* admin */}
+         <Route path="/admin" element={<Admin/>}></Route>
+         {/* <Route path="/admin" element={<AdminTable/>}></Route>  */}
+        <Route path="/admin/crear/:categoria" element={<Formulario/>}></Route>
 
         {/* novedades */}
         <Route path='/Novedades' element={<Novedades/>}/>

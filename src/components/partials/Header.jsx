@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 function Header() {
 
+  /* menu hambr */
   const menuHamburguesa=()=>{
     console.log('Hiciste click en el menú');
     document.querySelector("#burger").classList.toggle('desaparacer');
@@ -64,7 +65,7 @@ function Header() {
               <li><a href="/Novedades">Novedades</a></li>
               <li><a href="/Contacto">Contacto</a></li>                
               <li><a href="/usuario/perfil">Mi Perfil</a></li>
-              <li><a href="/admin/listar">Admin</a></li>
+              <li><a href="/admin">Admin</a></li>
               <li>
                 <form className="cSession"  action="/usuario/logout?_method=DELETE" method="post">
                   <button className="cSession" type="submit">Cerrar sesión</button>

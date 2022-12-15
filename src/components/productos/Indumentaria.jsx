@@ -1,16 +1,44 @@
-import React from 'react'
+import React,{useState, useEffect} from 'react'
 import PropTypes from 'prop-types'
-import Hombre from './Hombre';
-//import Hombre from '../../assets/H-Alter.png'
-import Mujer from './Mujer';
-//import Mujer from '../../assets/M-titular.png'
-import Niños from './Niños';
-//import Niños from '../../assets/Inf-alternativa.png'
+import { NavLink } from 'react-router-dom';
+import Cards from '../partials/Cards'
+import Article from '../home/Article';
+
 
 
 function Indumentaria(props) {
 
+    let productos=[
+        {
+          id:1,
+          imgPrincipal:'H-messi.png',
+          titulo:'HOMBRE',
+          url:<NavLink to={"/Indumentaria"}/>
+        },
+        {
+          id:2,
+          imgPrincipal:'Combo-Fan.png',
+          titulo:'COTILLÓN',
+          url:<NavLink to={"/productos/Cotillon"}/>
+        },
+        {
+          id:3,
+          imgPrincipal:'Inf-manta.png',
+          titulo:'NOVEDADES',
+          url:<NavLink to={"/productos/Novedades"}/>
+        },
+        {
+          id:4,
+          imgPrincipal:'Col-Messi.png',
+          titulo:'COLECCIONABLES',
+          url:<NavLink to={"/productos/Coleccionables"}/>
+        },
+      ]
+
    /*  const imagenes = `url('/assets/productos/${props.imagen}')` */
+   const [indumentaria,setIndumentaria] = useState([])
+   const [loading,setLoading] = useState(true)
+
 
   return (
     <div>
@@ -20,6 +48,7 @@ function Indumentaria(props) {
             <article className='indumentaria'>
 
                 <div>
+                    
                     {
                         props.Hombre==="si"?
                         <img src={`/productos/${props.imagen}`} alt={props.alt}/>
@@ -38,6 +67,7 @@ function Indumentaria(props) {
                         :
                         null
                     }
+                    
                 
                 
                 
@@ -45,56 +75,63 @@ function Indumentaria(props) {
                 
                </div> 
               <div>
+                
                 <h2>{props.nombre}</h2>
                 <p>{props.descripcion}</p>
                 <span>{props.precio}</span>
                 <button>Añadir al carrito</button>
+                
               </div>
             </article>
 
-
-               <div className='subCategorias'>
+            
+               <div /* className='subCategorias' */>                
+                <NavLink to={"/components/productos/indumentaria/Hombre"}>
                     <label htmlFor="hombre"><img src="/assets/productos/H-Alter.png" alt="" /></label>
                     <input type="checkbox" name='hombre' id='hombre'/>
+                    </NavLink>                    
                 </div>
-                <div className='subCategorias'>
+                
+                <div /* className='subCategorias' */>
+                <NavLink to={"/components/productos/indumentaria/Mujer"}>
                     <label htmlFor="mujer"><img src="/assets/productos/M-titular.png" alt="" /></label>
                     <input type="checkbox" name='mujer' id='mujer'/>
+                </NavLink>
                 </div>
-                <div className='subCategorias'>
-                    <label htmlFor="niños"><img src="/assets/productos/Inf-alternativa.png" alt="" /></label>
+                
+                <div /* className='subCategorias' */>
+                <NavLink to={"/components/productos/indumentaria/Niños"}>
+                    <label htmlFor="niños"><img src="/assets/productos/Inf-manta.png" alt="" /></label>
                     <input type="checkbox" name='niños' id='niños'/>
+                </NavLink>
                 </div> 
+                
             </section>
 
-            <section className='productos'>
-                <div className='Hombre'>
-                    <h2>Hombre</h2>
-                    <img src={Hombre} alt="Hombre" />
-                    <div>
-                    <Hombre/>
-                    </div>
-                </div>             
+            <h1>CONOCÉ TODOS NUESTROS PRODUCTOS</h1>
+                <section className="cards">   
 
-                <div className='Mujer'>
-                    <h2>Mujer</h2>
-                    <img src={Mujer} alt="Mujer" />
-                    <div>
-                    <Mujer/>
-                    </div>
-                </div>             
-
-                <div className='Niños'>
-                    <h2>Niños</h2>
-                    <img src={Niños} alt="Niños" />
-                    <div>
-                    <Niños/>
-                    </div>
-                </div>                
-            </section>
+                {productos.map((producto,index)=>
+                <Article
+                    producto={producto}
+                    key={index}
+                    id={producto.id}
+                    imgPrincipal={producto.imgPrincipal}
+                    titulo={producto.titulo}
+                    />     
+                )}  
+                </section>
         </main>
     </div>
   )
+  if (loading){
+    return(
+        <div>
+            ...cargando
+        </div>
+    )
+  }
+  
 }
 
 Indumentaria.propTypes= {

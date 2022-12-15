@@ -1,6 +1,8 @@
 import React from 'react'
 import Article from'./Article'
 import Countdown1 from'./Countdown1'
+import Cards from '../partials/Cards'
+import { NavLink } from 'react-router-dom';
 //import Novedades from'./Novedades'
 
 function main() {
@@ -9,27 +11,31 @@ function main() {
     {
       id:1,
       imgPrincipal:'H-messi.png',
-      titulo:'INDUMENTARIA'
+      titulo:'INDUMENTARIA',
+      url:<NavLink to={"/productos/Indumentaria"}/>
     },
     {
       id:2,
       imgPrincipal:'Combo-Fan.png',
-      titulo:'COTILLÓN'
+      titulo:'COTILLÓN',
+      url:<NavLink to={"/productos/Cotillon"}/>
     },
     {
       id:3,
       imgPrincipal:'Inf-manta.png',
-      titulo:'NOVEDADES'
+      titulo:'NOVEDADES',
+      url:<NavLink to={"/productos/Novedades"}/>
     },
     {
       id:4,
       imgPrincipal:'Col-Messi.png',
-      titulo:'COLECCIONABLES'
+      titulo:'COLECCIONABLES',
+      url:<NavLink to={"/productos/Coleccionables"}/>
     },
   ]
   return (
     <div>
-     <body class="home">
+     <body className="home">
       <main>
       
        <h1 className="productsPage">PROXIMO PARTIDO EN</h1>
@@ -39,6 +45,7 @@ function main() {
     
        <h1 className="productsPage">NUEVOS INGRESOS</h1>
          <section className="cardProduct">
+          <Cards></Cards>
          {/*  productos.forEach(producto => 
               { include('./partials/cards',{
                   id: producto.id,

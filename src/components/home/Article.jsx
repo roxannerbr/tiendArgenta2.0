@@ -1,11 +1,11 @@
 import React from 'react'
 
-function article({id,imgPrincipal,titulo}) {
+function article({categoriaId,imgPrincipal,titulo}) {
   return (
     <div>
       <article className="card card1">
           <div className="contenedor">
-            <a href={`/indumentaria/${id}`}><img src={`/assets/productos/${imgPrincipal}`} alt={titulo}/></a>
+            <a href={`/productos/${categoriaId}`}><img src={`/assets/productos/${imgPrincipal}`} alt={titulo}/></a>
           </div>
           <div className="nombre">
             <h2>{titulo}</h2>
