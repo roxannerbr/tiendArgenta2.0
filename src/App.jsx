@@ -4,7 +4,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 /* admin */
 import Admin from "./components/admin/Admin";
-//import AdminTable from "./components/admin/AdminTable";
+import Admin1 from "./components/admin/Admin1";
+import CreacionProducto from "./components/admin/CreacionProducto";
+import Formulario from "./components/admin/Formulario"
+
+/* dashboard */
+
 
 /* partials */
 import Header from "./components/partials/Header";
@@ -22,7 +27,6 @@ import Hombre from "./components/productos/Hombre";
 import Mujer from "./components/productos/Mujer";
 import Niños from "./components/productos/Niños";
 import Novedades from "./components/home/Novedades";
-import Formulario from "./components/admin/Formulario";
 //import Detalles from "./components/Detalles";
 
 /* user */
@@ -58,9 +62,11 @@ function App() {
         <Route path='/' element={<Main/>}/>
 
         {/* admin */}
-         <Route path="/admin" element={<Admin/>}></Route>
-         {/* <Route path="/admin" element={<AdminTable/>}></Route>  */}
-        <Route path="/admin/crear/:categoria" element={<Formulario/>}></Route>
+         <Route path="/admin" element={<Admin/>}/>
+         <Route path="/admin1" element={<Admin1/>}/>
+        <Route path="/admin/crear/:categoria" element={<Formulario/>}/>
+        <Route path='/admin/productos' element={<CreacionProducto/>}/>
+                
 
         {/* novedades */}
         <Route path='/Novedades' element={<Novedades/>}/>

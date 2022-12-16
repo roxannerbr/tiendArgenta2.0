@@ -14,7 +14,9 @@
 @import url("./busqueda.css");
 @import url("./error.css");
 @import url("./indumentaria.css");
+@import url("./admin.css");
+@import url('./banner.css');
 @import url("./crear-editar.css");
-@import url("./listar.css");
+@import url("./lista.css");
 @import url("./usuario.css");
 @import url("./productos2.css");

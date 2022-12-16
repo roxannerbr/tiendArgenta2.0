@@ -16,7 +16,8 @@ function Lista(props) {
   })); */
      
   return (
-          <List>
+    
+          <List className='lista'>
               
                 <ListItem
                   secondaryAction={
@@ -38,12 +39,14 @@ function Lista(props) {
                   />
                   {/* descrpcion secundaria */}
                    {<ListItemText
-                    primary={props.nombre}
+                    primary={props.titulo}
                     secondary={props.secondary ? props.descripcion : null}
                   />}
                 </ListItem>,
               
             </List>
+            
+           
   )
 }
 

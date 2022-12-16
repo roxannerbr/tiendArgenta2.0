@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+//import { AboutUs } from '../about/AboutUs';
 //import Map from '../Map';
 
 
@@ -27,7 +28,7 @@ function Footer() {
                   </ul>
               </div>
               <div className="columnas about">
-                   
+                   {/* <AboutUs></AboutUs> */}
               </div>
               <div className="columnas links">
                   <h6>LOCALES</h6>
