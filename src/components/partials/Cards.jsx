@@ -9,7 +9,7 @@
       <article className="ofertas">
             <a href="/productos/detalles/">
               <div className="imgBox">
-                <img src={`/images/productos/${props.imagen}`} alt={props.imagen} className="itemOferta" />
+                <img src={`/assets/productos/${props.imagen}`} alt={props.imagen} className="itemOferta" />
               </div>
               <div className="DatosBox">
                 <h4> {props.titulo}</h4>

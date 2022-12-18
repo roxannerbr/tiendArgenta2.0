@@ -42,22 +42,25 @@ function TabPanel(props) {
   
 function CreacionProducto() {
 
-        const [categorias, setCategorias] = useState([]) 
-        const [loading,setLoading] = useState(false)
+        const [categorias, setCategorias] = useState([])
+        const [loading,setLoading] = useState(true)
         const [value, setValue] = useState(1);
         const [secondary, setSecondary] = useState(false);
 
         useEffect(() => {
           setLoading(true)
-          fetch("http://localhost:3012/api/productos/categorias")
+          fetch("http://localhost:3012/api/categorias")
           .then((response) => response.json())
           .then((valores) => {
-            console.log(valores)
+            /* console.log(valores) */
             setCategorias(valores.data);
-            setLoading(false)
-          })
-          .catch(error => console.log(error))
-        }, [loading])
+
+            setTimeout(() => {
+          setLoading(false)
+        }, 2000)
+      })
+      .catch(error => console.log(error))
+  }, [loading])
         
         console.log(categorias)
        
@@ -97,21 +100,24 @@ function CreacionProducto() {
         <NavLink to={'/admin/crear/productos'}>
         <Button variant="contained" color="success">crear producto</Button>
         </NavLink>
-        <div>
-          
-          {categorias.map(productos=>              
+        <div>          
+        {
+        loading ? 
+              <p>Cargando...</p>
+              :
+          categorias.Cotillon.map(producto =>              
                 <Lista
-                imagen={productos.imagen}
-                titulo={productos.titulo}
-                stock={productos.stock}
-                precio={productos.precio}
-                descuento={productos.descuento}
-                descripcion={productos.descripcion}
-                id={productos.categoriasId}
+                imagen={producto.imagen}
+                titulo={producto.titulo}
+                stock={producto.stock}
+                precio={producto.precio}
+                descuento={producto.descuento}
+                descripcion={producto.descripcion}
+                categoria={producto.categoriasId}
                 secondary={secondary}
                 setSecondary={setSecondary}
                 />  
-          )   }     
+          )}     
         </div>      
       </TabPanel>
 
@@ -121,15 +127,19 @@ function CreacionProducto() {
         <Button variant="contained" color="success">crear producto</Button>
         </NavLink>
         <div>
-          {categorias.map(productos=>              
+        {
+        loading ? 
+            <p>Cargando...</p>
+            :
+          categorias.Coleccionables.map(producto=>              
                 <Lista
-                imagen={productos.imagen}
-                titulo={productos.titulo}
-                stock={productos.stock}
-                precio={productos.precio}
-                descuento={productos.descuento}
-                descripcion={productos.descripcion}
-                id={productos.categoriasId}
+                imagen={producto.imagen}
+                titulo={producto.titulo}
+                stock={producto.stock}
+                precio={producto.precio}
+                descuento={producto.descuento}
+                descripcion={producto.descripcion}
+                categoria={producto.categoriasId}
                 secondary={secondary}
                 setSecondary={setSecondary}
                 />  
@@ -143,15 +153,19 @@ function CreacionProducto() {
         <Button variant="contained" color="success">crear producto</Button>
         </NavLink>
         <div>
-          {categorias.map(productos=>              
+        {
+        loading ? 
+              <p>Cargando...</p>
+              :
+          categorias.IndumentariaMujer.map(producto =>              
                 <Lista
-                imagen={productos.imagen}
-                titulo={productos.titulo}
-                stock={productos.stock}
-                precio={productos.precio}
-                descuento={productos.descuento}
-                descripcion={productos.descripcion}
-                id={productos.categoriasId}
+                imagen={producto.imagen}
+                titulo={producto.titulo}
+                stock={producto.stock}
+                precio={producto.precio}
+                descuento={producto.descuento}
+                descripcion={producto.descripcion}
+                categoria={producto.categoriasId}
                 secondary={secondary}
                 setSecondary={setSecondary}
                 />  
@@ -161,19 +175,23 @@ function CreacionProducto() {
 
       <TabPanel value={value} index={3}>
         <h1>HOMBRE</h1>
-        <NavLink to={'/admin/crear/productos'}>
+        <NavLink to={'/admin/crear/producto'}>
         <Button variant="contained" color="success">crear producto</Button>
         </NavLink>
         <div>
-          {categorias.map(productos=>              
+        {
+        loading ? 
+              <p>Cargando...</p>
+              :
+          categorias.IndumentariaHombre.map(producto=>              
                 <Lista
-                imagen={productos.imagen}
-                titulo={productos.titulo}
-                stock={productos.stock}
-                precio={productos.precio}
-                descuento={productos.descuento}
-                descripcion={productos.descripcion}
-                id={productos.categoriasId}
+                imagen={producto.imagen}
+                titulo={producto.titulo}
+                stock={producto.stock}
+                precio={producto.precio}
+                descuento={producto.descuento}
+                descripcion={producto.descripcion}
+                categoria={producto.categoriasId}
                 secondary={secondary}
                 setSecondary={setSecondary}
                 />  
@@ -183,19 +201,23 @@ function CreacionProducto() {
 
       <TabPanel value={value} index={4}>
         <h1>INFANTIL</h1>
-        <NavLink to={'/admin/crear/productos'}>
+        <NavLink to={'/admin/crear/producto'}>
         <Button variant="contained" color="success">crear producto</Button>
         </NavLink>
         <div>
-          {categorias.map(productos=>              
+        {
+        loading ? 
+              <p>Cargando...</p>
+              :
+          categorias.IndumentariaInfantil.map(producto=>              
                 <Lista
-                imagen={productos.imagen}
-                titulo={productos.titulo}
-                stock={productos.stock}
-                precio={productos.precio}
-                descuento={productos.descuento}
-                descripcion={productos.descripcion}
-                id={productos.categoriasId}
+                imagen={producto.imagen}
+                titulo={producto.titulo}
+                stock={producto.stock}
+                precio={producto.precio}
+                descuento={producto.descuento}
+                descripcion={producto.descripcion}
+                categoria={producto.categoriasId}
                 secondary={secondary}
                 setSecondary={setSecondary}
                 />  

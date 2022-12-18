@@ -45,7 +45,17 @@ function main() {
     
        <h1 className="productsPage">NUEVOS INGRESOS</h1>
          <section className="cardProduct">
+          <Cards>      
+                 {/*  id: {producto.id}
+                  imagen: {producto.imagenes[0].nombre}
+                  titulo: {producto.titulo}
+                  descuento: {producto.descuento}
+                  precio: {producto.precio}       */}      
+          </Cards>
           <Cards></Cards>
+          <Cards></Cards>
+          <Cards></Cards>
+
          {/*  productos.forEach(producto => 
               { include('./partials/cards',{
                   id: producto.id,

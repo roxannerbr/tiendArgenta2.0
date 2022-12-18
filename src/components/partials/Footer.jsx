@@ -28,7 +28,7 @@ function Footer() {
                   </ul>
               </div>
               <div className="columnas about">
-                   {/* <AboutUs></AboutUs> */}
+              <img src="/assets/home/mapa.jpeg" alt=""/>
               </div>
               <div className="columnas links">
                   <h6>LOCALES</h6>

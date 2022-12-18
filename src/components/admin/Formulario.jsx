@@ -28,11 +28,11 @@ function Formulario() {
 
 
   useEffect(()=>{
-    fetch("http://localhost:3012/api/productos")
+    fetch("http://localhost:3012/api/productos/categorias")
     .then((response) => response.json())
     .then((valores) => {
       setCategoria(valores.result);
-      fetch("http://localhost:3012/api/productos")
+      fetch("http://localhost:3012/api/productos/categorias")
       .then((respuesta) => respuesta.json())
       .then((subCategoria) => {
         setSubCategoria(subCategoria.result);
@@ -128,7 +128,7 @@ function Formulario() {
         <select name="categoria" id="categoria" onChange={handleChange}>
           <option value="" selected hidden>Seleccione una opcion</option>
           {categoria.map(categoria => 
-              <option value={categoria.id}> {categoria.nombre}</option>
+              <option value={categoria.id}> {categoria.titulo}</option>
           )}
         </select>
       </div>
@@ -137,11 +137,11 @@ function Formulario() {
         
             :
               <div className='form-control'>
-                <label htmlFor="subCategoria">Marca</label>
+                <label htmlFor="subCategoria">subCategoria</label>
                 <select name="subCategoria" id="subCategoria" onChange={handleChange}>
                   <option value="" selected hidden>Seleccione una opcion</option>
                   {subCategoria.map(subCategoria => 
-                      <option value={subCategoria.id}> {subCategoria.nombre}</option>
+                      <option value={subCategoria.id}> {subCategoria.titulo}</option>
                   )}
                 </select>
               </div>

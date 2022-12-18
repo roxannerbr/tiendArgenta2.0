@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 /* admin */
 import Admin from "./components/admin/Admin";
-import Admin1 from "./components/admin/Admin1";
+//import Admin1 from "./components/admin/Admin1";
 import CreacionProducto from "./components/admin/CreacionProducto";
 import Formulario from "./components/admin/Formulario"
 
@@ -14,7 +14,7 @@ import Formulario from "./components/admin/Formulario"
 /* partials */
 import Header from "./components/partials/Header";
 import Main from "./components/home/Main";
-import Cards from "./components/partials/Cards";
+//import Cards from "./components/partials/Cards";
 import Footer from "./components/partials/Footer";
 import Contacto from "./components/Contacto";
 
@@ -63,7 +63,7 @@ function App() {
 
         {/* admin */}
          <Route path="/admin" element={<Admin/>}/>
-         <Route path="/admin1" element={<Admin1/>}/>
+         {/* <Route path="/admin1" element={<Admin1/>}/> */}
         <Route path="/admin/crear/:categoria" element={<Formulario/>}/>
         <Route path='/admin/productos' element={<CreacionProducto/>}/>
                 
@@ -75,7 +75,7 @@ function App() {
         <Route path='/Contacto' element={<Contacto/>}/>
 
         {/* productos */}
-        <Route path='/Productos' element={<Productos2/>}/>
+        <Route path='/productos' element={<Productos2/>}/>
      {/*    <Route path='/detalles' element={<Detalles/>}/> */}
         <Route path='/productos/cotillon' element={<Cotillon/>}/>
         <Route path='/productos/coleccionables' element={<Coleccionables/>}/>
