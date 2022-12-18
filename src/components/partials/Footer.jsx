@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-//import { AboutUs } from '../about/AboutUs';
+
 //import Map from '../Map';
 
 
@@ -28,7 +28,7 @@ function Footer() {
                   </ul>
               </div>
               <div className="columnas about">
-              <img src="/assets/home/mapa.jpeg" alt=""/>
+               <img src="/assets/home/mapa.jpeg" alt=""/> 
               </div>
               <div className="columnas links">
                   <h6>LOCALES</h6>

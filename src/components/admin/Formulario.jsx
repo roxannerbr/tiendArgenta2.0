@@ -28,14 +28,14 @@ function Formulario() {
 
 
   useEffect(()=>{
-    fetch("http://localhost:3012/api/productos/categorias")
+    fetch("http://localhost:3012/api/categorias")
     .then((response) => response.json())
     .then((valores) => {
       setCategoria(valores.result);
-      fetch("http://localhost:3012/api/productos/categorias")
+      fetch("http://localhost:3012/api/categorias")
       .then((respuesta) => respuesta.json())
       .then((subCategoria) => {
-        setSubCategoria(subCategoria.result);
+        setSubCategoria(subCategoria.data);
         setIsLoading(false)
       })
     })
@@ -128,7 +128,7 @@ function Formulario() {
         <select name="categoria" id="categoria" onChange={handleChange}>
           <option value="" selected hidden>Seleccione una opcion</option>
           {categoria.map(categoria => 
-              <option value={categoria.id}> {categoria.titulo}</option>
+              <option value={categoria.id}> {categoria.nombre}</option>
           )}
         </select>
       </div>
@@ -141,7 +141,7 @@ function Formulario() {
                 <select name="subCategoria" id="subCategoria" onChange={handleChange}>
                   <option value="" selected hidden>Seleccione una opcion</option>
                   {subCategoria.map(subCategoria => 
-                      <option value={subCategoria.id}> {subCategoria.titulo}</option>
+                      <option value={subCategoria.id}> {subCategoria.nombre}</option>
                   )}
                 </select>
               </div>

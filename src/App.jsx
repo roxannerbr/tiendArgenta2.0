@@ -16,6 +16,8 @@ import Header from "./components/partials/Header";
 import Main from "./components/home/Main";
 //import Cards from "./components/partials/Cards";
 import Footer from "./components/partials/Footer";
+
+
 import Contacto from "./components/Contacto";
 
 /* productos */
@@ -99,9 +101,7 @@ function App() {
         {/* error */}
         <Route path='/error' element={<Error/>}/>
 
-        {/* busqueda */}
-       {/*  <Route path='/busqueda' element={<Busqueda/>}/> */}
-
+        
       </Routes>
 
       <Footer/> 
