@@ -4,7 +4,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 /* admin */
 import Admin from "./components/admin/Admin";
-//import Admin1 from "./components/admin/Admin1";
 import CreacionProducto from "./components/admin/CreacionProducto";
 import Formulario from "./components/admin/Formulario"
 import FormularioEdicion from "./components/admin/FormularioEdicion"
@@ -14,13 +13,9 @@ import Header from "./components/partials/Header";
 import Main from "./components/home/Main";
 //import Cards from "./components/partials/Cards";
 import Footer from "./components/partials/Footer";
-import Listar from './components/admin/Listar';
-
-
 import Contacto from "./components/Contacto";
 
 /* productos */
-import ProductosCopy from "./components/admin/ProductosCopy";
 import Cotillon from "./components/productos/Cotillon";
 import Coleccionables from "./components/productos/Coleccionables";
 import Indumentaria from "./components/productos/Indumentaria";
@@ -28,6 +23,7 @@ import Hombre from "./components/productos/Hombre";
 import Mujer from "./components/productos/Mujer";
 import Niños from "./components/productos/Niños";
 import Novedades from "./components/home/Novedades";
+import ProductosCopy from "./components/admin/ProductosCopy";
 //import Detalles from "./components/Detalles";
 
 /* user */
@@ -61,14 +57,15 @@ function App() {
       <Routes>
         {/* home */}
         <Route path='/' element={<Main/>}/>
-        <Route path='/admin/listar' element={<Listar/>}/>
 
         {/* admin */}
         <Route path="/admin" element={<Admin/>}/>
+        {/* <Route path="/admin/lista" element={<Lista/>}/> */}
         <Route path="/admin/crear/:categoria" element={<Formulario/>}/>
         <Route path='/admin/productos' element={<CreacionProducto/>}/>
-        <Route path='/admin/productos/:id' element={<CreacionProducto/>}/> 
-        <Route path='/admin/editar/:categoria/:id' element={<FormularioEdicion />}/>              
+        <Route path='/admin/crear/:categoria' element={<CreacionProducto/>}/> 
+        <Route path='/admin/editar/:categoria/:id' element={<FormularioEdicion />}/> 
+        <Route path='/admin/productosCopy' element={<ProductosCopy/>}/>             
 
         {/* novedades */}
         <Route path='/Novedades' element={<Novedades/>}/>
@@ -77,8 +74,7 @@ function App() {
         <Route path='/Contacto' element={<Contacto/>}/>
 
         {/* productos */}
-        <Route path='/admin/productos' element={<ProductosCopy/>}/>
-     {/*    <Route path='/detalles' element={<Detalles/>}/> */}
+        {/*    <Route path='/detalles' element={<Detalles/>}/> */}
         <Route path='/productos/cotillon' element={<Cotillon/>}/>
         <Route path='/productos/coleccionables' element={<Coleccionables/>}/>
         <Route path='/productos/indumentaria' element={<Indumentaria/>}/>

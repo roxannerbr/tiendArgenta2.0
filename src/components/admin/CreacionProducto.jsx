@@ -5,8 +5,6 @@ import Box from '@mui/material/Box';
 import Tabs from '@mui/material/Tabs';
 import Typography from '@mui/material/Typography';
 import Lista from './Lista.jsx';
-
-
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import Button from '@mui/material/Button';
@@ -61,7 +59,6 @@ function CreacionProducto() {
           .then((valores) => {
             /* console.log(valores) */
             setCategorias(valores.data);
-
             setTimeout(() => {
           setLoading(false)
         }, 2000)

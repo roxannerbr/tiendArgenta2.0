@@ -1,7 +1,7 @@
-import React,{useState, useEffect} from 'react'
+import React from 'react'
 import { NavLink } from 'react-router-dom';
 import ProductosCopy from './ProductosCopy';
-//import imagen from '../../assets/productos/Col-Aguero.png'
+//import imagen from '../../assets/productos/escudo.png'
 
 function Admin() {
   
