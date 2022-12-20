@@ -1,7 +1,7 @@
 import React from 'react'
 import Categoria from './Categoria'
 
-function Productos2() {
+function Productosbis() {
 
     let categorias= [
         {
@@ -27,7 +27,7 @@ function Productos2() {
 
   return (
     <div>
-        <main className='productos2'>
+        <main className='productosbis'>
             <section className='cat'>
 
                 {
@@ -58,4 +58,4 @@ function Productos2() {
   )
 }
 
-export default Productos2
+export default Productosbis

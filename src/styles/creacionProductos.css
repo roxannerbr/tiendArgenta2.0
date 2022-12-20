@@ -1,8 +1,0 @@
-.crearProd .Box{
-    background-color: var(--bs-border-color);
-display: flex;
-flex-direction: column;
-justify-content: space-evenly;
-align-items: stretch;
-color: var(--celeste);
-}

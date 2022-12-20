@@ -1,15 +1,14 @@
 import React from 'react'
 
 function EditarUsuario() {
-  return (
-    <div>
-      <body classNameName="usuario">
+
+  return (       
       
-      <main>
+      <main className='usuario'>
         <form action="/usuario/editarUsuario" method="post" enctype="multipart/form-data" id="formulario">{/* ENCTYPE FUNDAMENTAL PARA SUBIR IMG CON MULTER */}
           
-          <div classNameName="foto">
-            <img src="/assets/usuario" alt=""/>
+          <div className="foto">
+            <img src={`/assets/usuario/profile3.jpg`} alt=""/>
             <div className="selImg mb-3">
               <label htmlFor="formFileMultiple" className="form-label">Cambiar imagen de perfil</label>
               <input className="form-control" type="file" name="imagen" id="formFileMultiple" value="" />
@@ -50,7 +49,6 @@ function EditarUsuario() {
                   </li>
                 </ul></div>
               </div>
-            </div>
             <div className="accordion-item">
               <h2 className="accordion-header" id="headingFour">
                 <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
@@ -87,15 +85,12 @@ function EditarUsuario() {
                 <small className="error-msg" id="errorSubmit"></small>
                 <button className="btn btn-success" type="submit">Aceptar cambios</button>
               </div>
-            </form>
-  
+            </div>
+            </form>  
+
+            <script src="/javascript/editarUsuario.js"></script>
           </main>
-          
-          
-          <script src="/javascript/editarUsuario.js"></script>
-        </body>
-       
-    </div>
+        
   )
 }
 

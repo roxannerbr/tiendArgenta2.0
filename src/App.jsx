@@ -7,21 +7,20 @@ import Admin from "./components/admin/Admin";
 //import Admin1 from "./components/admin/Admin1";
 import CreacionProducto from "./components/admin/CreacionProducto";
 import Formulario from "./components/admin/Formulario"
-
-/* dashboard */
-
+import FormularioEdicion from "./components/admin/FormularioEdicion"
 
 /* partials */
 import Header from "./components/partials/Header";
 import Main from "./components/home/Main";
 //import Cards from "./components/partials/Cards";
 import Footer from "./components/partials/Footer";
+import Listar from './components/admin/Listar';
 
 
 import Contacto from "./components/Contacto";
 
 /* productos */
-import Productos2 from "./components/productos/Productos2";
+import ProductosCopy from "./components/admin/ProductosCopy";
 import Cotillon from "./components/productos/Cotillon";
 import Coleccionables from "./components/productos/Coleccionables";
 import Indumentaria from "./components/productos/Indumentaria";
@@ -62,13 +61,14 @@ function App() {
       <Routes>
         {/* home */}
         <Route path='/' element={<Main/>}/>
+        <Route path='/admin/listar' element={<Listar/>}/>
 
         {/* admin */}
-         <Route path="/admin" element={<Admin/>}/>
-         {/* <Route path="/admin1" element={<Admin1/>}/> */}
+        <Route path="/admin" element={<Admin/>}/>
         <Route path="/admin/crear/:categoria" element={<Formulario/>}/>
         <Route path='/admin/productos' element={<CreacionProducto/>}/>
-                
+        <Route path='/admin/productos/:id' element={<CreacionProducto/>}/> 
+        <Route path='/admin/editar/:categoria/:id' element={<FormularioEdicion />}/>              
 
         {/* novedades */}
         <Route path='/Novedades' element={<Novedades/>}/>
@@ -77,7 +77,7 @@ function App() {
         <Route path='/Contacto' element={<Contacto/>}/>
 
         {/* productos */}
-        <Route path='/productos' element={<Productos2/>}/>
+        <Route path='/admin/productos' element={<ProductosCopy/>}/>
      {/*    <Route path='/detalles' element={<Detalles/>}/> */}
         <Route path='/productos/cotillon' element={<Cotillon/>}/>
         <Route path='/productos/coleccionables' element={<Coleccionables/>}/>

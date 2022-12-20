@@ -5,6 +5,8 @@ import Box from '@mui/material/Box';
 import Tabs from '@mui/material/Tabs';
 import Typography from '@mui/material/Typography';
 import Lista from './Lista.jsx';
+
+
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import Button from '@mui/material/Button';
@@ -30,7 +32,7 @@ function TabPanel(props) {
           </Box>
         )}
       </div>
-    );
+    )
   }
 
   TabPanel.propTypes = {
@@ -41,6 +43,11 @@ function TabPanel(props) {
 
   
 function CreacionProducto() {
+
+  /* const Demo = styled('div')(({ theme }) => ({
+    backgroundColor: theme.palette.background.paper,
+  }));  */
+    
 
         const [categorias, setCategorias] = useState([])
         const [loading,setLoading] = useState(true)
@@ -72,8 +79,8 @@ function CreacionProducto() {
 
     <div className='crearProd'>
         
-    <Box sx={{ width: '100%' }} >
-    
+    <Box sx={{ width: '100%' }} className="boxes">
+
       <Box>       
       <Tabs value={value} onChange={handleChange} centered>
         <Tab label="Cotillón" />
@@ -105,8 +112,10 @@ function CreacionProducto() {
         loading ? 
               <p>Cargando...</p>
               :
-          categorias.Cotillon.map(producto =>              
+          categorias.Cotillon.map(producto =>
+            <NavLink to={`/admin/editar/producto/${producto.id}`}>             
                 <Lista
+                id={producto.id}
                 imagen={producto.imagen}
                 titulo={producto.titulo}
                 stock={producto.stock}
@@ -116,7 +125,8 @@ function CreacionProducto() {
                 categoria={producto.categoriasId}
                 secondary={secondary}
                 setSecondary={setSecondary}
-                />  
+                /> 
+                </NavLink>  
           )}     
         </div>      
       </TabPanel>
@@ -131,8 +141,10 @@ function CreacionProducto() {
         loading ? 
             <p>Cargando...</p>
             :
-          categorias.Coleccionables.map(producto=>              
+          categorias.Coleccionables.map(producto=>  
+            <NavLink to={`/admin/editar/producto/${producto.id}`}>             
                 <Lista
+                id={producto.id}
                 imagen={producto.imagen}
                 titulo={producto.titulo}
                 stock={producto.stock}
@@ -142,7 +154,8 @@ function CreacionProducto() {
                 categoria={producto.categoriasId}
                 secondary={secondary}
                 setSecondary={setSecondary}
-                />  
+                /> 
+                </NavLink> 
           )   }     
         </div>      
       </TabPanel>
@@ -157,8 +170,10 @@ function CreacionProducto() {
         loading ? 
               <p>Cargando...</p>
               :
-          categorias.IndumentariaMujer.map(producto =>              
+          categorias.IndumentariaMujer.map(producto => 
+            <NavLink to={`/admin/editar/producto/${producto.id}`}>             
                 <Lista
+                id={producto.id}
                 imagen={producto.imagen}
                 titulo={producto.titulo}
                 stock={producto.stock}
@@ -168,7 +183,8 @@ function CreacionProducto() {
                 categoria={producto.categoriasId}
                 secondary={secondary}
                 setSecondary={setSecondary}
-                />  
+                /> 
+                </NavLink> 
           )   }     
         </div>      
       </TabPanel>
@@ -183,8 +199,10 @@ function CreacionProducto() {
         loading ? 
               <p>Cargando...</p>
               :
-          categorias.IndumentariaHombre.map(producto=>              
+          categorias.IndumentariaHombre.map(producto=>
+            <NavLink to={`/admin/editar/producto/${producto.id}`}>             
                 <Lista
+                id={producto.id}
                 imagen={producto.imagen}
                 titulo={producto.titulo}
                 stock={producto.stock}
@@ -195,6 +213,7 @@ function CreacionProducto() {
                 secondary={secondary}
                 setSecondary={setSecondary}
                 />  
+                </NavLink>
           )   }     
         </div>      
       </TabPanel>
@@ -209,8 +228,10 @@ function CreacionProducto() {
         loading ? 
               <p>Cargando...</p>
               :
-          categorias.IndumentariaInfantil.map(producto=>              
+          categorias.IndumentariaInfantil.map(producto=> 
+            <NavLink to={`/admin/editar/producto/${producto.id}`}>             
                 <Lista
+                id={producto.id}
                 imagen={producto.imagen}
                 titulo={producto.titulo}
                 stock={producto.stock}
@@ -221,6 +242,7 @@ function CreacionProducto() {
                 secondary={secondary}
                 setSecondary={setSecondary}
                 />  
+                </NavLink>
           )   }     
         </div>      
       </TabPanel>

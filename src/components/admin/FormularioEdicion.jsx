@@ -2,11 +2,12 @@ import React,{useEffect,useState} from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
-function Formulario() {
+function FormularioEdicion() {
 
   const navigate = useNavigate();
-  const [variedad, setVariedad] = useState('novedades')
-  const [categoria,setCategoria] = useState([])
+  const [variedad, setVariedad] = useState('productos')
+  const [categorias,setCategorias] = useState([])
+  const [id,setId] = useState('0')
   const [subCategoria,setSubCategoria] = useState([])
   const [isLoading, setIsLoading] = useState(true)
 
@@ -19,29 +20,50 @@ function Formulario() {
   })
 
   const actualUrl = window.location.href;
-  
+
+  const buscarCategoria = (id) => {
+    let nombreCategoria
+    categorias.forEach(categoria => categoria.id === id ? nombreCategoria = categoria.nombre : "Sin Categoria")
+    return nombreCategoria
+  }
+  const buscarSubCategoria = (id) => {
+    let nombreSubCategoria
+    subCategoria.forEach(subCategoria => subCategoria.id === id ? nombreSubCategoria = subCategoria.nombre : "Sin SubCategoria")
+    return nombreSubCategoria
+  }
+
   useEffect(()=>{
     let barra = actualUrl.lastIndexOf('/') + 1
-    let magia = actualUrl.substring(barra,100)
-    setVariedad(magia)
+    let id = actualUrl.substring(barra,100)
+    let UrlSinId = actualUrl.substring(0,barra - 1)
+    let nuevaBarra = UrlSinId.lastIndexOf('/') + 1 
+    let variedad = UrlSinId.substring(nuevaBarra)
+    setId(id)
+    setVariedad(variedad)
   },[actualUrl])
 
 
   useEffect(()=>{
-    fetch("http://localhost:3012/api/categorias")
+    fetch("http://localhost:3012/categorias")
     .then((response) => response.json())
     .then((valores) => {
-      setCategoria(valores.result);
-      fetch("http://localhost:3012/api/categorias")
+      setCategorias(valores.data);
+      fetch("http://localhost:3012/subCategorias")
       .then((respuesta) => respuesta.json())
       .then((subCategoria) => {
         setSubCategoria(subCategoria.data);
-        setIsLoading(false)
+        fetch(`http://localhost:3012/productos/detalle/${id}?variedad=${variedad}`)
+        .then((respuesta2) => respuesta2.json())
+        .then((producto) => {
+          setValues(producto.data[0])
+          setIsLoading(false)
+        })
       })
     })
     .catch(error => console.log(error))
   },[isLoading])
 
+  console.log(values);
   const handleChange = (e) => {
     let {target} = e
     let {name,value} = target
@@ -55,13 +77,13 @@ function Formulario() {
   };
  const handleSubmit = async (e) => {
     e.preventDefault()
-
-    let response = await axios.post(`http://localhost:3012/productos/admin/crear?variedad=${variedad}`,values)
+    let response = await axios.put(`http://localhost:3012/productos/admin/editar/${id}?variedad=${variedad}`,values)
     console.log(response);
     if(response.status === 200){
-      return navigate('/admin')
+      return navigate('/admin/productos')
     }
  }
+ console.log(id);
 
   if (isLoading) {
     return(
@@ -73,18 +95,17 @@ function Formulario() {
   return (
 
     <section className='Crear-Producto'>
-
-      <h1>Creando {variedad}</h1>
+      <h1>Editando {variedad}</h1>
       <form onSubmit={handleSubmit}>
 
         <div className='form-control'>
                 <label htmlFor="nombre">Nombre</label>
-                <input type="text" name="nombre" id="nombre" onChange={handleChange}/>
+                <input type="text" name="nombre" id="nombre" value={values.titulo} onChange={handleChange}/>
                 <small>Debe ingresar un Nombre</small>
           </div>
         <div className='form-control'>
                 <label htmlFor="precio">Precio</label>
-                <input type="text" name="precio" id="precio" onChange={handleChange}/>
+                <input type="text" name="precio" id="precio" value={values.precio} onChange={handleChange}/>
                 <small>Debe ingresar un Precio</small>
           </div>
 
@@ -93,31 +114,32 @@ function Formulario() {
         <div>
           <div className='form-control'>
                 <label htmlFor="descripcion">Descripcion</label>
-                <textarea name="descripcion" id="descripcion" cols="30" rows="10" placeholder='Escriba algo porfa' onChange={handleChange}></textarea>
+                <textarea name="descripcion" id="descripcion" cols="30" rows="10" value={values.descripcion} placeholder='Escriba algo por favor' onChange={handleChange}></textarea>
                 <small>Debe ingresar una descripcion</small>
           </div>
+
           <div className='form-control'>
-            <label htmlFor="hombre">Hombre</label>
+            <label htmlFor="hombre"> Hombre</label>
             <select name="hombre" id="hombre" onChange={handleChange}>
-              <option value="" selected hidden>Seleccione una opcion</option>
+              <option defaultValue={values.hombre} hidden>{values.hombre === 1 ? "Si" : "No"}</option>
+              <option value="1">Si</option>
+              <option value="0">No</option>
+            </select>
+          </div>
+
+          <div className='form-control'>
+            <label htmlFor="mujer"> Mujer</label>
+            <select name="mujer" id="mujer" onChange={handleChange}>
+              <option defaultValue={values.mujer} hidden>{values.mujer === 1 ? "Si" : "No"}</option>
               <option value="1">Si</option>
               <option value="0">No</option>
             </select>
           </div>
 
       <div className='form-control'>
-        <label htmlFor="mujer">Mujer</label>
-        <select name="mujer" id="mujer" onChange={handleChange}>
-          <option value="" selected hidden>Seleccione una opcion</option>
-          <option value="1">Si</option>
-          <option value="0">No</option>
-        </select>
-      </div>
-
-      <div className='form-control'>
         <label htmlFor="niños">Niños</label>
         <select name="niños" id="niños" onChange={handleChange}>
-          <option value="" selected hidden>Seleccione una opcion</option>
+          <option defaultValue={values.niños} hidden>{values.niños === 1 ? "Si" : "No"}</option>
           <option value="1">Si</option>
           <option value="0">No</option>
         </select>
@@ -126,26 +148,30 @@ function Formulario() {
       <div className='form-control'>
         <label htmlFor="categoria">Categoria</label>
         <select name="categoria" id="categoria" onChange={handleChange}>
-          <option value="" selected hidden>Seleccione una opcion</option>
-          {categoria.map(categoria => 
+          <option defaultValue={values.categoriaId} selected hidden>{buscarCategoria(values.categoriaId)}</option>
+          {categorias.map(categoria => 
               <option value={categoria.id}> {categoria.titulo}</option>
           )}
         </select>
       </div>
         </div>       
             :
+            <div>
               <div className='form-control'>
-                <label htmlFor="subCategoria">subCategoria</label>
+                <label htmlFor="subCategoria">SubCategoria</label>
                 <select name="subCategoria" id="subCategoria" onChange={handleChange}>
-                  <option value="" selected hidden>Seleccione una opcion</option>
+                  <option defaultValue={values.subCategoriaId} selected hidden>{buscarSubCategoria(values.subCategoriaId)}</option>
                   {subCategoria.map(subCategoria => 
                       <option value={subCategoria.id}> {subCategoria.titulo}</option>
                   )}
                 </select>
               </div>
+            </div>
         }
         <div className='form-control'>
-          <button type='submit'>Crear Nuevo Producto</button>
+          <button type='submit'>
+            Editar Producto
+          </button>
         </div>
       </form>
     </section>
@@ -153,4 +179,4 @@ function Formulario() {
   )
 }
 
-export default Formulario
+export default FormularioEdicion
