@@ -9,16 +9,15 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import axios from 'axios';
 import Swal from 'sweetalert2'
 //import { useNavigate } from 'react-router-dom'
-//import { styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
   
+const Demo = styled('div')(({ theme }) => ({
+  backgroundColor: theme.palette.background.paper,
+})); 
 
 function Lista(props) {
 
   /* const navigate = useNavigate(); */
-
- /* const Demo = styled('div')(({ theme }) => ({
-    backgroundColor: theme.palette.background.paper,
-  }));  */
 
   const handleDelete = () => {
     Swal.fire({
@@ -45,7 +44,7 @@ function Lista(props) {
 }
      
   return (
-    
+    <Demo>
           <List className='lista'>
               
                 <ListItem
@@ -58,7 +57,8 @@ function Lista(props) {
                 >
                   {/* imagen ilustrativa */}
                   <ListItemAvatar>
-                    <Avatar alt="" src={`/assets/productos/${props.categoria}/${props.imagen}`}/>
+                    <Avatar alt="" src={`/assets/productos/Col-pelota.png`}/>
+                    {/* {`/images/productos/${props.categoria}/${props.imagen}`} */}
                   </ListItemAvatar>
                   {/* descrpcion secundaria */}
                    {<ListItemText
@@ -68,6 +68,7 @@ function Lista(props) {
                 </ListItem>,
               
             </List>
+            </Demo>
             
            
   )

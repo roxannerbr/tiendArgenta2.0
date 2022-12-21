@@ -40,11 +40,11 @@ export default class Countdown1 extends React.Component{
     return(
       <div >
 
-       {/* <Datepicker/> */}
-        {/* selected = {new Date("Sat Dec 03 2022 16:00:00 GMT-3")} 
-       dateFormat="EEEE, MMM d, YYYY"  */}  
-
-       <div className="datepicker">
+        {/* <Datepicker/> 
+         selected = {new Date("Sat Dec 03 2022 16:00:00 GMT-3")} 
+       dateFormat="EEEE, MMM d, YYYY"    
+ */}
+       <div className="datepicker" sx={{display: 'none'}}>
        <DatePicker
           className="form-control"
           selected={new Date()}

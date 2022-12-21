@@ -9,6 +9,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import Button from '@mui/material/Button';
 import { NavLink } from 'react-router-dom';
+//import cargando from '../../assets/productos/spin.gif'
 //import { styled } from '@mui/material/styles';
 
 
@@ -76,7 +77,7 @@ function CreacionProducto() {
 
     <div className='crearProd'>
         
-    <Box sx={{ width: '100%' }} className="boxes">
+    <Box sx={{ width: '98%', margin: '10px', bgcolor:'var(--celesteClaro)' }} className="boxes">
 
       <Box>       
       <Tabs value={value} onChange={handleChange} centered>
@@ -101,7 +102,7 @@ function CreacionProducto() {
     
       <TabPanel value={value} index={0}>
         <h1>COTILLÓN</h1>
-        <NavLink to={'/admin/crear/productos'}>
+        <NavLink to={'/admin/crear/producto'}>
         <Button variant="contained" color="success">crear producto</Button>
         </NavLink>
         <div>          
@@ -115,6 +116,7 @@ function CreacionProducto() {
                 id={producto.id}
                 imagen={producto.imagen}
                 titulo={producto.titulo}
+                /* categoria='productos' */
                 stock={producto.stock}
                 precio={producto.precio}
                 descuento={producto.descuento}

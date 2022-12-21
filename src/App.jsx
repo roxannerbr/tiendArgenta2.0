@@ -5,8 +5,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 /* admin */
 import Admin from "./components/admin/Admin";
 import CreacionProducto from "./components/admin/CreacionProducto";
-import Formulario from "./components/admin/Formulario"
-import FormularioEdicion from "./components/admin/FormularioEdicion"
+import Form from "./components/admin/Form"
+import FormEdit from "./components/admin/FormEdit"
 
 /* partials */
 import Header from "./components/partials/Header";
@@ -61,10 +61,10 @@ function App() {
         {/* admin */}
         <Route path="/admin" element={<Admin/>}/>
         {/* <Route path="/admin/lista" element={<Lista/>}/> */}
-        <Route path="/admin/crear/:categoria" element={<Formulario/>}/>
+        <Route path="/admin/crear/:categoria" element={<Form/>}/>
         <Route path='/admin/productos' element={<CreacionProducto/>}/>
         <Route path='/admin/crear/:categoria' element={<CreacionProducto/>}/> 
-        <Route path='/admin/editar/:categoria/:id' element={<FormularioEdicion />}/> 
+        <Route path='/admin/editar/:categoria/:id' element={<FormEdit />}/> 
         <Route path='/admin/productosCopy' element={<ProductosCopy/>}/>             
 
         {/* novedades */}
