@@ -114,7 +114,7 @@ function CreacionProducto() {
             <NavLink to={`/admin/editar/producto/${producto.id}`}>             
                 <Lista
                 id={producto.id}
-                imagen={producto.imagen}
+                imagen={producto.imagenes[0].nombre}
                 titulo={producto.titulo}
                 /* categoria='productos' */
                 stock={producto.stock}
@@ -242,7 +242,9 @@ function CreacionProducto() {
                 setSecondary={setSecondary}
                 />  
                 </NavLink>
-          )   }     
+                
+          )   }   
+            
         </div>      
       </TabPanel>
     

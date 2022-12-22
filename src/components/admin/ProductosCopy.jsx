@@ -22,11 +22,14 @@ function ProductosCopy() {
             .then((response) => response.json())
             .then((valores) => {
                 setCotillon(valores.data[0].cotillon)
-                setColeccionables(valores.data[0].coleccionable)
+                setColeccionables(valores.data[0].coleccionables)
                 setIndumentariaHombre(valores.data[0].indumentariaHombre)
                 setIndumentariaMujer(valores.data[0].indumentariaMujer)
                 setIndumentariaInfantil(valores.data[0].indumentariaInfantil)
                 setIsLoading(false)
+                
+                console.log(valores);
+                
             }).catch(error => console.log(error))
     }, [isLoading])
 

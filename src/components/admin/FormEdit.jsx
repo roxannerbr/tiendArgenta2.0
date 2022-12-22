@@ -11,9 +11,10 @@ import PhotoCamera from '@mui/icons-material/PhotoCamera';
 import SendIcon from '@mui/icons-material/Send';
 
 
-export default function TextFieldHiddenLabel(){
+export default function FormEdit(){
+  
   return (    
-    <Stack 
+    <Stack className="crear-editar"
       component="form"
       sx={{
         width: '98%', 
@@ -25,6 +26,15 @@ export default function TextFieldHiddenLabel(){
       noValidate
       autoComplete="off"
     >
+
+<div className="adminTop"><h1>Editar producto</h1><div className="btncrear">
+                <a href="/admin/listar">
+                    <button type="button" className="btn crear"><i className="fas fa-arrow-circle-left"></i></button>
+                </a>
+            </div>
+            </div>  
+            <form action="/admin/crear" method="post" enctype="multipart/form-data">    
+    <div className="agregar">
     
     <Box sx={{ width: '98%', margin: '10px', bgcolor:'var(--celesteClaro)' }}>
       <FormControl fullWidth>
@@ -40,7 +50,9 @@ export default function TextFieldHiddenLabel(){
         >
           <option value={1}>Cotillon</option>
           <option value={2}>Coleccionables</option>
-          <option value={3}>Indumentaria</option>          
+          <option value={3}>Hombre</option>
+          <option value={4}>Mujer</option>          
+          <option value={5}>Infantil</option>             
         </NativeSelect>
       </FormControl>
     </Box>
@@ -57,9 +69,10 @@ export default function TextFieldHiddenLabel(){
             id: 'uncontrolled-native',
           }}
         >
-          <option value={1}>Hombre</option>
-          <option value={2}>Mujer</option>
-          <option value={3}>Infantil</option>
+          <option value={1}>Camisetas</option>
+          <option value={2}>Pantalones</option>
+          <option value={3}>Accesorios</option>
+          <option value={4}>Otros</option>     
         </NativeSelect>
       </FormControl>
     </Box>
@@ -100,9 +113,11 @@ export default function TextFieldHiddenLabel(){
         <PhotoCamera />
       </IconButton>
     </Stack>
+    </div>
+    </form>
 
     <Button sx={{width: '25%', bgcolor: 'var(--dorado)'}} variant="contained" endIcon={<SendIcon />}>
-        Editar Producto
+        Aceptar cambios
       </Button>
       
     </Stack> 

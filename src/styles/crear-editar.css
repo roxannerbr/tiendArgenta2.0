@@ -1,40 +1,40 @@
-.crear-editar main .adminTop{
+.crear-editar .adminTop{
     display: flex;
     width: 100%;
     background: var(--dorado);
     align-items: center;
     margin-bottom: 10px;
 }
-.crear-editar main .adminTop h1{
+.crear-editar .adminTop h1{
     color: white;
     text-align: center;
     width: 90%;
 }
-.crear-editar main .adminTop .btncrear{
+.crear-editar .adminTop .btncrear{
     width: 10%;
     display: flex;
     justify-content:center;
 }
 
-.crear-editar main a .adminTop .crear{
+.crear-editar a .adminTop .crear{
     width: 150px;
 }
-.crear-editar main a .btn{
+.crear-editar .btn{
     color: white;
     background: var(--cyan);
     font-weight: 600;
 }
-.crear-editar main button.btn .fas i{
+.crear-editar button.btn .fas i{
     color: white;
 }
-.crear-editar main a .adminTop .btn:hover{
+.crear-editar a .adminTop .btn:hover{
     background-color: var(--cyan);
 }
-.crear-editar main form {
+.crear-editar form {
     margin: 0 20px 20px;
 }
 
-.crear-editar main form .contenedor-checks{
+.crear-editar form .contenedor-checks{
     display: flex;
     background-color: white;
     color: var(--azulPetroleo);
@@ -44,37 +44,37 @@
     padding: 16px 12px;
 }
 
-.crear-editar main form .agregar{
+.crear-editar form .agregar{
     background: var(--cyan);
     padding: 20px;
     border-radius: 20px;
 }
 
-.crear-editar main form .form-floating{
+.crear-editar form .form-floating{
     padding: 8px 0 ;
 }
 
-.crear-editar main form .form-floating small{
+.crear-editar form .form-floating small{
     color: white;
 }
-.crear-editar main form .form-floating p{
+.crear-editar form .form-floating p{
     color: white;
 }
-.crear-editar main form .btn{
+.crear-editar form .btn{
     width: 400px;
     color: white;
     background: var(--dorado)
 }
-.crear-editar main form .btn:hover{
+.crear-editar form .btn:hover{
     color: white;
 }
 @media (min-width:768px){
-    .crear-editar main form {
+    .crear-editar form {
         margin: 0 90px 20px;
     }
 }
 @media (min-width:1024px){
-    .crear-editar main form {
+    .crear-editar form {
         margin: 0 100px 20px;
     }
 }
