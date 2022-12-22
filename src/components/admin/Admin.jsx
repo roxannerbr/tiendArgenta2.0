@@ -14,21 +14,21 @@ function Admin() {
         <div className="col-md-6 col-lg-3 mb-3 mb-lg-0">
           <div className="box">
           <i className="fa-regular fa-eye"></i>
-            <h3>5,154</h3>
+            <h3>3,000</h3>
             <p className="lead">Visitas</p>
           </div>
         </div>
         <div className="col-md-6 col-lg-3 mb-3 mb-lg-0">
           <div className="box">
           <i className="fa-regular fa-user"></i>
-            <h3>245</h3>
+            <h3>38</h3>
             <p className="lead">Usuarios registrados</p>
           </div>
         </div>
         <div className="col-md-6 col-lg-3 mb-3 mb-md-0">
           <div className="box">
           <i className="fa-solid fa-cart-shopping"></i>
-            <h3>5,154</h3>
+            <h3>64</h3>
             <p className="lead">Cantidad de productos</p>
           </div>
         </div>

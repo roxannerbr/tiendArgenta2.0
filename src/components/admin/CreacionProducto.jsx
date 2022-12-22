@@ -169,7 +169,7 @@ function CreacionProducto() {
         loading ? 
               <p>Cargando...</p>
               :
-          categorias.IndumentariaMujer.map(producto => 
+          categorias.Mujer.map(producto => 
             <NavLink to={`/admin/editar/producto/${producto.id}`}>             
                 <Lista
                 id={producto.id}
@@ -198,7 +198,7 @@ function CreacionProducto() {
         loading ? 
               <p>Cargando...</p>
               :
-          categorias.IndumentariaHombre.map(producto=>
+          categorias.Hombre.map(producto=>
             <NavLink to={`/admin/editar/producto/${producto.id}`}>             
                 <Lista
                 id={producto.id}
@@ -227,7 +227,7 @@ function CreacionProducto() {
         loading ? 
               <p>Cargando...</p>
               :
-          categorias.IndumentariaInfantil.map(producto=> 
+          categorias.Infantil.map(producto=> 
             <NavLink to={`/admin/editar/producto/${producto.id}`}>             
                 <Lista
                 id={producto.id}

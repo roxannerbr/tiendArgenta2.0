@@ -7,25 +7,25 @@ function ProductosCopy() {
 
     const [cotillon, setCotillon] = useState([])
     const [coleccionables, setColeccionables] = useState([])
-    const [indumentariaHombre, setIndumentariaHombre] = useState([])
-    const [indumentariaMujer, setIndumentariaMujer] = useState([])
-    const [indumentariaInfantil, setIndumentariaInfantil] = useState([])
+    const [Hombre, setHombre] = useState([])
+    const [Mujer, setMujer] = useState([])
+    const [Infantil, setInfantil] = useState([])
     const [isLoading, setIsLoading]= useState(false)
     const [prodCotillon, setprodCotillon] = useState(false)
     const [prodColeccionables, setprodColeccionables] = useState(false)
-    const [prodIndumentariaHombre, setprodIndumentariaHombre] = useState(false)
-    const [prodIndumentariaMujer, setprodIndumentariaMujer] = useState(false)
-    const [prodIndumentariaInfantil, setprodIndumentariaInfantil] = useState(false)
+    const [prodHombre, setprodHombre] = useState(false)
+    const [prodMujer, setprodMujer] = useState(false)
+    const [prodInfantil, setprodInfantil] = useState(false)
 
     useEffect(() => {
         fetch("http://localhost:3012/api/categorias")
             .then((response) => response.json())
             .then((valores) => {
-                setCotillon(valores.data[0].cotillon)
+                setCotillon(valores.data[3].cotillon)
                 setColeccionables(valores.data[0].coleccionables)
-                setIndumentariaHombre(valores.data[0].indumentariaHombre)
-                setIndumentariaMujer(valores.data[0].indumentariaMujer)
-                setIndumentariaInfantil(valores.data[0].indumentariaInfantil)
+                setHombre(valores.data[0].Hombre)
+                setMujer(valores.data[0].Mujer)
+                setInfantil(valores.data[0].Infantil)
                 setIsLoading(false)
                 
                 console.log(valores);
@@ -52,18 +52,18 @@ function ProductosCopy() {
             break;
 
             case "hombre":
-              producto= indumentariaHombre.find(indumentariaHombre => indumentariaHombre.id=== id)
-           setprodIndumentariaHombre(producto) 
+              producto= Hombre.find(Hombre => Hombre.id=== id)
+           setprodHombre(producto) 
               break;
 
               case "mujer":
-                producto= indumentariaMujer.find(indumentariaMujer => indumentariaMujer.id=== id)
-          setprodIndumentariaMujer(producto) 
+                producto= Mujer.find(Mujer => Mujer.id=== id)
+          setprodMujer(producto) 
                 break;
 
                 case "infantil":
-                  producto= indumentariaInfantil.find(indumentariaInfantil => indumentariaInfantil.id=== id)
-           setprodIndumentariaInfantil(producto)  
+                  producto= Infantil.find(Infantil => Infantil.id=== id)
+           setprodInfantil(producto)  
            break;
 
         default:
@@ -105,34 +105,34 @@ function ProductosCopy() {
                   </article>
                   
                   <article className='producto'>
-                 <img src={prodIndumentariaHombre? `/assets/productos/${prodIndumentariaHombre.imagen}`:imagen} alt="hombre"/>
-                    <h5>{prodIndumentariaHombre? prodIndumentariaHombre.nombre : "Hombre"}</h5>
+                 <img src={prodHombre? `/assets/productos/${prodHombre.imagen}`:imagen} alt="hombre"/>
+                    <h5>{prodHombre? prodHombre.nombre : "Hombre"}</h5>
                     <select name="hombre" id="hombre"  onChange={handleSelected}>
                     <option defaultValue="" hidden>Seleccione un producto</option>                    
-                    {indumentariaHombre.map(indumentariaHombre=>
-                    <option value={indumentariaHombre.id}>{indumentariaHombre.nombre}</option>
+                    {Hombre.map(Hombre=>
+                    <option value={Hombre.id}>{Hombre.nombre}</option>
                     )}                    
                     </select>
                   </article>
                   
                   <article className='producto'>
-                  <img src={prodIndumentariaMujer? `/assets/productos/${prodIndumentariaMujer.imagen}`:imagen} alt="mujer"/> 
-                    <h5>{prodIndumentariaMujer? prodIndumentariaMujer.nombre : "Mujer"}</h5>
+                  <img src={prodMujer? `/assets/productos/${prodMujer.imagen}`:imagen} alt="mujer"/> 
+                    <h5>{prodMujer? prodMujer.nombre : "Mujer"}</h5>
                     <select name="mujer" id="mujer"  onChange={handleSelected}>
                     <option defaultValue="" hidden>Seleccione un producto</option>                    
-                    {indumentariaMujer.map(indumentariaMujer=>
-                    <option value={indumentariaMujer.id}>{indumentariaMujer.nombre}</option>
+                    {Mujer.map(Mujer=>
+                    <option value={Mujer.id}>{Mujer.nombre}</option>
                     )}                    
                     </select>
                   </article>
                  
                   <article className='producto'>
-                  <img src={prodIndumentariaInfantil? `/assets/productos/${prodIndumentariaInfantil.imagen}`:imagen} alt="infantil"/>
-                    <h5>{prodIndumentariaInfantil? prodIndumentariaInfantil.nombre : "Infantil"}</h5>
+                  <img src={prodInfantil? `/assets/productos/${prodInfantil.imagen}`:imagen} alt="infantil"/>
+                    <h5>{prodInfantil? prodInfantil.nombre : "Infantil"}</h5>
                     <select name="infantil" id="infantil"  onChange={handleSelected}>
                     <option defaultValue="" hidden>Seleccione un producto</option>                    
-                    {indumentariaInfantil.map(indumentariaInfantil=>
-                    <option value={indumentariaInfantil.id}>{indumentariaInfantil.nombre}</option>
+                    {Infantil.map(Infantil=>
+                    <option value={Infantil.id}>{Infantil.nombre}</option>
                     )}                    
                     </select>
                   </article>
